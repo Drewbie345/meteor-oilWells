@@ -1,0 +1,9 @@
+<template name="wellItem">
+  <div class="well">
+    <div class="well-content">
+      <h3><a href="{{url}}">{{wellName}}</a><p>{{county}}, {{state}}</p></h3>
+      <p>submitted by {{author}} &nbsp;&nbsp; {{#if ownWell}}<a href="{{pathFor 'wellEdit'}}">Edit well</a>{{/if}}</p>
+    </div>
+    <a href="{{pathFor 'wellPage'}}">Read more.</a>
+  </div>
+</template>

@@ -1,0 +1,36 @@
+<template name="wellEdit">
+  <form class="main">
+    <div class="control-group">
+        <label class="control-label" for="wellName">Well Name</label>
+        <div class="controls">
+            <input name="wellName" type="text" value="{{wellName}}" placeholder="Well Name"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="county">County</label>
+        <div class="controls">
+            <input name="county" type="text" value="{{county}}" placeholder="County"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="state">State</label>
+        <div class="controls">
+            <input name="state" type="text" value="{{state}}" placeholder="State"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-primary submit"/>
+        </div>
+    </div>
+    <hr/>
+    <div class="control-group">
+        <div class="controls">
+            <a class="btn btn-danger delete" href="#">Delete well</a>
+        </div>
+    </div>
+  </form>
+</template>
