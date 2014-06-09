@@ -7,7 +7,7 @@ Wells.allow({
 
 Wells.deny({
   update: function(userId, well, fieldNames) {
-    return (_.without(fieldNames, 'wellName', 'county', 'state').length > 0);
+    return (_.without(fieldNames, 'wellName', 'county', 'state', 'lat', 'long', 'rigName', 'landman').length > 0);
   }
 });
 
@@ -30,7 +30,7 @@ Meteor.methods({
         wellWithSameLink._id);
     }
 
-    var well = _.extend(_.pick(wellAttributes, 'wellName', 'county', 'state'), {
+    var well = _.extend(_.pick(wellAttributes, 'wellName', 'county', 'state', 'lat', 'long', 'rigName', 'landman'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime(),

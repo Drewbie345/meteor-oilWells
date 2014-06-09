@@ -13,3 +13,7 @@ Meteor.publish('notifications', function() {
 Meteor.publish('singleWell', function(id) {
   return id && Wells.find(id);
 });
+
+Meteor.publish('users', function() {
+  return Meteor.users.find({}, {fields: {username: 1, profile: 1}});
+})

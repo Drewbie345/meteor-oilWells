@@ -7,7 +7,11 @@ Template.wellEdit.events({
     var wellProperties = {
       wellName: $(e.target).find('[name=wellName]').val(),
       county: $(e.target).find('[name=county]').val(),
-      state: $(e.target).find('[name=state]').val()
+      state: $(e.target).find('[name=state]').val(),
+      lat: $(e.target).find('[name=lat]').val(),
+      long: $(e.target).find('[name=long]').val(),
+      rigName: $(e.target).find('[name=rigName]').val(),
+      landman: $(e.target).find('[name=landman]').val()
     }
 
     Wells.update(currentWellId, {$set: postProperties}, function(error) {
@@ -22,7 +26,7 @@ Template.wellEdit.events({
   'click .delete': function(e) {
     e.preventDefault();
 
-    if (confirm("Delete this post?")) {
+    if (confirm("Delete this well?")) {
       var currentWellId = this._id;
       Wells.remove(currentWellId);
       Router.go('wellsList');

@@ -2,11 +2,13 @@ if (Wells.find().count() === 0) {
   var now = new Date().getTime();
 
   var drewId = Meteor.users.insert({
+    username: 'drew',
     profile: { name: 'Drew Robinson' }
   });
   var drew = Meteor.users.findOne(drewId);
 
   var phillipId = Meteor.users.insert({
+    username: 'phillip',
     profile: { name: 'Phillip Robinson' }
   });
   var phillip = Meteor.users.findOne(phillipId);
