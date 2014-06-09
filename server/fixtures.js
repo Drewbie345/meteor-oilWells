@@ -11,6 +11,32 @@ if (Wells.find().count() === 0) {
   });
   var phillip = Meteor.users.findOne(phillipId);
 
+  var sampleWellId = Wells.insert({
+    wellName: 'Sample Well With Comments',
+    author: drew.profile.name,
+    userId: drew._id,
+    county: 'Travis',
+    state: 'Texas',
+    submitted: now - 7 * 3600 * 1000,
+    commentsCount: 2
+  });
+
+  Comments.insert({
+    wellId: sampleWellId,
+    userId: phillip._id,
+    author: phillip.profile.name,
+    submitted: now - 5 * 3600 * 1000,
+    body: 'This is a sample comment'
+  });
+
+  Comments.insert({
+    wellId: sampleWellId,
+    userId: drew._id,
+    author: drew.profile.name,
+    submitted: now - 3 * 3600 * 1000,
+    body: 'This is another sample comment'
+  });
+
   for (var i = 1; i < 6; i++) {
     Wells.insert({
       wellName: 'Oil Well #' + i,
@@ -18,7 +44,8 @@ if (Wells.find().count() === 0) {
       userId: drew._id,
       county: 'Dallas',
       state: 'Texas',
-      submitted: now - i * 3600 * 1000 + 1
+      submitted: now - i * 3600 * 1000 + 1, 
+      commentsCount: 0
     });
   }
 
@@ -29,7 +56,8 @@ if (Wells.find().count() === 0) {
       userId: phillip._id,
       county: 'Tulsa',
       state: 'Oklahoma',
-      submitted: now - i * 3600 * 1000 + 1
+      submitted: now - i * 3600 * 1000 + 1,
+      commentsCount: 0
     });
   }
 }

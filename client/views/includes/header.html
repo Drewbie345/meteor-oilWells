@@ -9,10 +9,11 @@
       <a class="brand" href="{{pathFor 'wellsList'}}">Schedule That Well.</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          {{#if currentUser}}<li><a href="{{pathFor 'wellSubmit'}}">New Well</a></li>{{/if}}
-        </ul>
-        <ul class="nav">
-          {{#if currentUser}}<li><a href="#">Schedule</a></li>{{/if}}
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'wellSubmit'}}">New Well</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li class="dropdown">{{> notifications}}</li>
+          {{/if}}
         </ul>
         <ul class="nav pull-right">
           <li>{{> loginButtons}}</li>

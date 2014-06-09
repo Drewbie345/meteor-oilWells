@@ -2,7 +2,9 @@
   <div class="well">
     <div class="well-content">
       <h3><a href="{{url}}">{{wellName}}</a><p>{{county}}, {{state}}</p></h3>
-      <p>submitted by {{author}} &nbsp;&nbsp; {{#if ownWell}}<a href="{{pathFor 'wellEdit'}}">Edit well</a>{{/if}}</p>
+      <p>submitted by {{author}},
+      <a href="{{pathFor 'wellPage'}}">{{commentsCount}} comments</a>
+       {{#if ownWell}}<a href="{{pathFor 'wellEdit'}}">Edit well</a>{{/if}}</p>
     </div>
     <a href="{{pathFor 'wellPage'}}">Read more.</a>
   </div>

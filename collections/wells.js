@@ -33,7 +33,8 @@ Meteor.methods({
     var well = _.extend(_.pick(wellAttributes, 'wellName', 'county', 'state'), {
       userId: user._id,
       author: user.username,
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+      commentsCount: 0
     });
 
     var wellId = Wells.insert(well);
