@@ -19,6 +19,10 @@ if (Wells.find().count() === 0) {
     userId: drew._id,
     county: 'Travis',
     state: 'Texas',
+    lat: 30.28565,
+    long: -97.73921,
+    rigName: 'Rigger1',
+    landman: 'drew',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2
   });
@@ -46,6 +50,10 @@ if (Wells.find().count() === 0) {
       userId: drew._id,
       county: 'Dallas',
       state: 'Texas',
+      lat: 30.29128,
+      long: -97.73858,
+      rigName: 'Rigger1',
+      landman: 'drew',
       submitted: now - i * 3600 * 1000 + 1, 
       commentsCount: 0
     });
@@ -58,6 +66,10 @@ if (Wells.find().count() === 0) {
       userId: phillip._id,
       county: 'Tulsa',
       state: 'Oklahoma',
+      lat: 35.363556,
+      long: 138.730438,
+      rigName: 'Rigger2',
+      landman: 'phillip',
       submitted: now - i * 3600 * 1000 + 1,
       commentsCount: 0
     });

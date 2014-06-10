@@ -1,5 +1,7 @@
 <template name="wellPage">
   {{> wellItem}}
+  {{setId}}
+  {{> map}} 
   <ul class="comments">
     {{#each comments}}
       {{> comment}}
