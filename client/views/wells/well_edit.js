@@ -3,6 +3,7 @@ Template.wellEdit.events({
     e.preventDefault();
 
     var currentWellId = this._id;
+    var currentWell = Wells.findOne({_id: this._id});
 
     var wellProperties = {
       wellName: $(e.target).find('[name=wellName]').val(),
@@ -14,7 +15,7 @@ Template.wellEdit.events({
       landman: $(e.target).find('[name=landman]').val()
     }
 
-    Wells.update(currentWellId, {$set: postProperties}, function(error) {
+    Wells.update(currentWellId, {$set: wellProperties}, function(error) {
       if (error) {
         throwError(error.reason);
       } else {
@@ -33,3 +34,13 @@ Template.wellEdit.events({
     }
   }
 });
+
+// Template.wellEdit.helpers({
+//   setSelected: function() {
+//     var currentWell = Wells.findOne({_id: this._id});
+//     var rig = currentWell.rigName;
+//     console.log(rig);
+//     $('#' + rig).prop('selected', true);
+//   }
+// });
+

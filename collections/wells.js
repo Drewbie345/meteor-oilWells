@@ -7,7 +7,7 @@ Wells.allow({
 
 Wells.deny({
   update: function(userId, well, fieldNames) {
-    return (_.without(fieldNames, 'wellName', 'county', 'state', 'lat', 'long', 'rigName', 'landman').length > 0);
+    return (_.without(fieldNames, 'wellName', 'county', 'state', 'lat', 'long', 'rigName', 'rigId', 'landman').length > 0);
   }
 });
 

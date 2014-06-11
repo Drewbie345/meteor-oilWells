@@ -1,3 +1,12 @@
 <template name="map">
-    <div id="map-canvas"></div>
+  <div class="well">
+    <h3>Map of {{wellName}}:</h3>
+    <div class="well-content col-md-6">
+      <div id="map-canvas"></div>
+    </div>
+    <div class="well-content col-md-6">
+      <h3>Latitude: {{lat}}</h3>
+      <h3>Longitude: {{long}}</h3>
+    </div>
+  </div>
 </template>

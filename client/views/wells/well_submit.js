@@ -11,7 +11,7 @@ Template.wellSubmit.events({
       rigName: $(e.target).find('[name=rigName]').val(),
       landman: $(e.target).find('[name=landman]').val()
     }
-
+  
     Meteor.call('post', well, function(error, id) {
       if (error) {
         throwError(error.reason);

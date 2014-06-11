@@ -13,6 +13,30 @@ if (Wells.find().count() === 0) {
   });
   var phillip = Meteor.users.findOne(phillipId);
 
+  var rig1Id = Rigs.insert({
+    rigName: 'Rigger1',
+    author: drew.profile.name,
+    userId: drew._id,
+    submitted: now - 5 * 3600 * 1000
+  });
+  var rig1 = Rigs.findOne(rig1Id);
+
+  var rig2Id = Rigs.insert({
+    rigName: 'Rigger2',
+    author: drew.profile.name,
+    userId: drew._id,
+    submitted: now - 8 * 3600 * 1000
+  });
+  var rig2 = Rigs.findOne(rig2Id);
+
+  var rig3Id = Rigs.insert({
+    rigName: 'Rigger3',
+    author: drew.profile.name,
+    userId: drew._id,
+    submitted: now - 4 * 3600 * 1000
+  });
+  var rig3 = Rigs.findOne(rig3Id);
+
   var sampleWellId = Wells.insert({
     wellName: 'Sample Well With Comments',
     author: drew.profile.name,
@@ -52,7 +76,7 @@ if (Wells.find().count() === 0) {
       state: 'Texas',
       lat: 30.29128,
       long: -97.73858,
-      rigName: 'Rigger1',
+      rigName: 'Rigger2',
       landman: 'drew',
       submitted: now - i * 3600 * 1000 + 1, 
       commentsCount: 0
@@ -68,7 +92,7 @@ if (Wells.find().count() === 0) {
       state: 'Oklahoma',
       lat: 35.363556,
       long: 138.730438,
-      rigName: 'Rigger2',
+      rigName: 'Rigger3',
       landman: 'phillip',
       submitted: now - i * 3600 * 1000 + 1,
       commentsCount: 0
