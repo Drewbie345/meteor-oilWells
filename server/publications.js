@@ -18,8 +18,8 @@ Meteor.publish('users', function() {
   return Meteor.users.find({}, {fields: {username: 1, profile: 1}});
 });
 
-Meteor.publish('rigs', function() {
-  return Rigs.find();
+Meteor.publish('rigs', function(options) {
+  return Rigs.find({}, options);
 });
 
 Meteor.publish('singleRig', function(id) {
