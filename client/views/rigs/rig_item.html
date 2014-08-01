@@ -1,7 +1,10 @@
 <template name="rigItem">
-  <div class="post">
-    <div class="post-content">
+  <div class="well">
+    <div class="well-content">
       <h3>{{rigName}}</h3>
+      <p>submitted by {{author}} &nbsp;&nbsp;
+       <a href="{{pathFor 'rigEdit'}}">Edit rig</a></p>
     </div>
+    <a href="{{pathFor 'rigPage'}}">Read more.</a>
   </div>
 </template>

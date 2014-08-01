@@ -7,7 +7,7 @@ Rigs.allow({
 
 Rigs.deny({
   update: function(userId, rig, fieldNames) {
-    return (_.without(fieldNames, 'rigName').length > 0);
+    return (_.without(fieldNames, 'rigName', 'status').length > 0);
   }
 });
 
@@ -30,7 +30,7 @@ Meteor.methods({
         rigWithSameLink._id);
     }
 
-    var rig = _.extend(_.pick(rigAttributes, 'rigName'), {
+    var rig = _.extend(_.pick(rigAttributes, 'rigName', 'status'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime()

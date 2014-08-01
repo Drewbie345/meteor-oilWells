@@ -3,7 +3,8 @@ Template.rigSubmit.events({
     e.preventDefault();
 
     var rig = {
-      rigName: $(e.target).find('[name=rigName]').val()
+      rigName: $(e.target).find('[name=rigName]').val(),
+      status: $(e.target).find('[name=statusOptions]').val()
     }
 
     Meteor.call('postRig', rig, function(error, id) {

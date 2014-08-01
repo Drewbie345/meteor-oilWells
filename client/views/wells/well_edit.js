@@ -35,12 +35,4 @@ Template.wellEdit.events({
   }
 });
 
-// Template.wellEdit.helpers({
-//   setSelected: function() {
-//     var currentWell = Wells.findOne({_id: this._id});
-//     var rig = currentWell.rigName;
-//     console.log(rig);
-//     $('#' + rig).prop('selected', true);
-//   }
-// });
 
